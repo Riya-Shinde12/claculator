@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android-like Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 320px;
+    }
+
+    .display {
+      width: 100%;
+      height: 70px;
+      text-align: right;
+      font-size: 36px;
+      background-color: #e6e6e6;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+      color: #333;
+    }
+
+    .button-row {
+      display: flex;
+      margin: 10px 0;
+    }
+
+    .button {
+      flex: 1;
+      padding: 20px;
+      font-size: 24px;
+      margin: 5px;
+      border-radius: 50%;
+      background-color: #f4f4f4;
+      border: none;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .button:hover {
+      background-color: #ddd;
+    }
+
+    .button:active {
+      background-color: #ccc;
+    }
+
+    .operator {
+      background-color: #fe9801;
+      color: white;
+    }
+
+    .equal {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .clear {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" class="display" disabled />
+
+    <div class="button-row">
+      <button class="button clear" onclick="clearDisplay()">C</button>
+      <button class="button operator" onclick="appendOperator('/')">/</button>
+      <button class="button operator" onclick="appendOperator('*')">*</button>
+      <button class="button operator" onclick="appendOperator('-')">-</button>
+    </div>
+
+    <div class="button-row">
+      <button class="button" onclick="appendNumber('7')">7</button>
+      <button class="button" onclick="appendNumber('8')">8</button>
+      <button class="button" onclick="appendNumber('9')">9</button>
+      <button class="button operator" onclick="appendOperator('+')">+</button>
+    </div>
+
+    <div class="button-row">
+      <button class="button" onclick="appendNumber('4')">4</button>
+      <button class="button" onclick="appendNumber('5')">5</button>
+      <button class="button" onclick="appendNumber('6')">6</button>
+      <button class="button equal" onclick="calculate()">=</button>
+    </div>
+
+    <div class="button-row">
+      <button class="button" onclick="appendNumber('1')">1</button>
+      <button class="button" onclick="appendNumber('2')">2</button>
+      <button class="button" onclick="appendNumber('3')">3</button>
+      <button class="button" onclick="appendNumber('0')">0</button>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
